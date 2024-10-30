@@ -234,7 +234,7 @@ const LoadUnload = () => {
               </>
             ) : (
               <div className="text-center">
-                <h2 className="text-xl md:text-2xl font-bold mb-4">You're ready to start editing your resume!</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-4">You re ready to start editing your resume!</h2>
                 <p className="text-gray-600 mb-5">Proceed to the editor to make your changes and personalize your resume.</p>
                 <button
                   onClick={closeOverlay}

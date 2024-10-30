@@ -47,7 +47,7 @@ These terms and conditions outline the rules and regulations for the use of Resu
 
 <h1 className="text-lg font-semibold my-2 mt-5 ">7. Disclaimer of Warranties</h1>
 
-- Our services are provided on an "as is" and "as available" basis. Resume Intellect makes no warranties, express or implied, regarding the accuracy, reliability, or completeness of our services.
+- Our services are provided on an as is and as available basis. Resume Intellect makes no warranties, express or implied, regarding the accuracy, reliability, or completeness of our services.
 - We do not warrant that our services will meet clients expectations or that any errors or defects will be corrected.
 
 <h1 className="text-lg font-semibold my-2 mt-5 ">8. Changes to Terms and Conditions</h1>
