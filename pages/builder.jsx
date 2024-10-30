@@ -161,15 +161,16 @@ export default function Builder({ onClose }) {
     }
   };
 
+ 
   useEffect(() => {
     // Ensure we only run this in the browser, where `localStorage` is available
     if (typeof window !== 'undefined') {
-      const { t } = router.query;
+      const { token } = router.query; // Get the token from the URL
       const orderid = localStorage.getItem('orderid');
 
-      // Check if t=success is present and orderid is stored
-      if (t === 'success' && orderid) {
-        // Call the verification API
+     
+      if (token ) {
+        
         axios
           .get(`https://api.resumeintellect.com/api/user/paypal/verify-order?orderid=${orderid}`)
           .then(response => {
@@ -187,7 +188,7 @@ export default function Builder({ onClose }) {
             // Redirect to /transaction on error
             router.push('/transaction');
           });
-      }
+      } 
     }
   }, [router.query]);
 

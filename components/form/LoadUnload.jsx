@@ -13,7 +13,7 @@ const LoadUnload = () => {
   const [showOverlay, setShowOverlay] = useState(true);
   const [showLoadingAnimation, setShowLoadingAnimation] = useState(false);
   const [editingReady, setEditingReady] = useState(false);
-  
+
   const router = useRouter();
 
   const fetchResumeDetails = async (resumeId) => {
@@ -46,6 +46,12 @@ const LoadUnload = () => {
     if (router.query.id) {
       fetchResumeDetails(router.query.id);
     }
+
+    // Check if the current URL matches the specified pattern
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("dashboard/aibuilder/") && currentUrl.includes("t=success")) {
+      setShowOverlay(false); // Close popup if URL matches
+    }
   }, [router.query.id]);
 
   const handleBack = () => {
@@ -72,7 +78,7 @@ const LoadUnload = () => {
 
     setLoading(true);
     setShowLoadingAnimation(true);
-    try {const token = localStorage.getItem("token");
+    try {   const token = localStorage.getItem("token");
       const response = await axios.post("https://api.resumeintellect.com/api/user/resume-upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -114,7 +120,7 @@ const LoadUnload = () => {
 
   const handleStartFromScratch = async () => {
     setShowLoadingAnimation(true);
-    try {const token = localStorage.getItem("token");
+    try {    const token = localStorage.getItem("token");
       const response = await axios.post(
         "https://api.resumeintellect.com/api/user/resume-create",
         {},
@@ -173,12 +179,12 @@ const LoadUnload = () => {
               <span>Back</span>
             </button>
             
-            {/* <button
+            <button
               onClick={closeOverlay}
               className="absolute top-4 right-4 text-gray-600 hover:text-red-600 transition-colors"
             >
               ✖ Close
-            </button> */}
+            </button>
 
             {!editingReady ? (
               <>
@@ -210,9 +216,12 @@ const LoadUnload = () => {
                   </div>
 
                   <div className="h-80 md:h-auto p-6 md:p-10 border-2 rounded-lg shadow-lg shadow-blue-100 w-full md:w-1/2">
+                    <div className="mb-4">
+                      <FaCloudUploadAlt className="mx-auto h-8 w-8 md:h-12 md:w-12 text-blue-500" />
+                    </div>
                     <h2 className="text-lg font-semibold mb-2">No, start from scratch</h2>
                     <p className="text-gray-500 mb-5 text-sm md:text-base">
-                      Begin with a blank resume template that you can customize to your needs
+                      We’ll provide you with a blank resume template that you can customize to your needs
                     </p>
                     <button
                       onClick={handleStartFromScratch}
@@ -225,7 +234,7 @@ const LoadUnload = () => {
               </>
             ) : (
               <div className="text-center">
-                <h2 className="text-xl md:text-2xl font-bold mb-4">You re ready to start editing your resume!</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-4">You're ready to start editing your resume!</h2>
                 <p className="text-gray-600 mb-5">Proceed to the editor to make your changes and personalize your resume.</p>
                 <button
                   onClick={closeOverlay}
