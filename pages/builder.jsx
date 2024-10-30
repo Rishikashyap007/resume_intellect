@@ -87,7 +87,7 @@ export default function Builder({ onClose }) {
       const data = response.data;
       if (data && data.data) {
         // Redirect to the PayPal URL provided in the response
-        // window.location.href = data.data;
+        window.location.href = data.data;
       }
       if (data && data.order_id) {
         localStorage.setItem("orderid", data.order_id);
