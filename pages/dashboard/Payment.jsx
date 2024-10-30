@@ -75,8 +75,8 @@ function Payment() {
               <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600  tracking-wider">
                 <div className="text-center">
                   <p className="text-lg font-bold ">AI resume writer</p>
-                  <span className=" text-violet-900 font-bold text-lg"> $49</span> <span className=" text-violet-900 ">/One Time Purchase</span><br/>
-                <Link href="/dashboard/ai-resume-builder">
+                  <span className=" text-violet-900 font-bold text-lg"> $0</span> <span className=" text-violet-900 ">/One Time Purchase</span><br/>
+                <Link href="/dashboard/aibuilder">
                 <button
                     className='bg-blue-900 text-white p-2 rounded-lg m-2 mt-3'
                     

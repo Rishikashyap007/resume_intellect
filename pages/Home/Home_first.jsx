@@ -38,7 +38,7 @@ function Home_first() {
         <>
             <div className='bg-blue-100 pt-10'>
                 <div className='flex justify-center'>
-                    <a href="tel:+1 8887936474" className="text-black bg-red-300 px-3 py-4 rounded-3xl font-bold text-center sm:hidden">
+                    <a href="#phone" className="text-black bg-red-300 px-3 py-4 rounded-3xl font-bold text-center sm:hidden">
                        Contact us
                     </a>
                 </div>

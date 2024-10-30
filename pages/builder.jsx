@@ -43,6 +43,8 @@ export default function Builder({ onClose }) {
   const [token, setToken] = useState(null);
   const [resumeId, setResumeId] = useState(null);
 
+  const router = useRouter(); 
+  const { id } = router.query;
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -85,7 +87,7 @@ export default function Builder({ onClose }) {
       const data = response.data;
       if (data && data.data) {
         // Redirect to the PayPal URL provided in the response
-        window.location.href = data.data;
+        // window.location.href = data.data;
       }
       if (data && data.order_id) {
         localStorage.setItem("orderid", data.order_id);
@@ -159,7 +161,35 @@ export default function Builder({ onClose }) {
     }
   };
 
+  useEffect(() => {
+    // Ensure we only run this in the browser, where `localStorage` is available
+    if (typeof window !== 'undefined') {
+      const { t } = router.query;
+      const orderid = localStorage.getItem('orderid');
 
+      // Check if t=success is present and orderid is stored
+      if (t === 'success' && orderid) {
+        // Call the verification API
+        axios
+          .get(`https://api.resumeintellect.com/api/user/paypal/verify-order?orderid=${orderid}`)
+          .then(response => {
+            // Check if the response indicates success
+            if (response.data && response.data === 'success') {
+              // If successful, download the PDF
+              downloadAsPDF();
+            } else {
+              // Otherwise, redirect to /transaction
+              router.push('/transaction');
+            }
+          })
+          .catch(error => {
+            console.error("Error verifying order:", error);
+            // Redirect to /transaction on error
+            router.push('/transaction');
+          });
+      }
+    }
+  }, [router.query]);
 
   const pdfExportOptions = {
     paperSize: "A4",
@@ -171,8 +201,7 @@ export default function Builder({ onClose }) {
     forcePageBreak: ".page-break"
   };
 
-  const router = useRouter(); 
-  const { id } = router.query;
+ 
   const handleLogout = () => {
     localStorage.removeItem('token'); // Clear the token
     setIsLoggedIn(false); // Update login state
@@ -328,7 +357,7 @@ export default function Builder({ onClose }) {
           </li>
           <li>
             <Link
-              href="aibuilder"
+              href="/dashboard/aibuilder"
               className={getLinkClassName("/dashboard/aibuilder")}
               onClick={() => {
                 onClose();
@@ -559,7 +588,7 @@ export default function Builder({ onClose }) {
               <button
                 type="button"
                 className="rounded-lg px-10 lg:ms-2 font-bold bg-blue-950 text-white p-1"
-                onClick={downloadAsPDF}
+                onClick={handleDownloadResume}
               >
                 Pay & Download
               </button>
