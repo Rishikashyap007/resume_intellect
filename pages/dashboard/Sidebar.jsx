@@ -10,7 +10,7 @@ const Sidebar = ({ onClose }) => {
   const getLinkClassName = (path) => {
     return router.pathname === path
       ? "flex items-center p-2 bg-violet-900 border-b-2 rounded font-semibold text-white"
-      : "flex items-center p-2 hover:bg-violet-900  border-b-2 rounded font-semibold  ";
+      : "flex items-center p-2 hover:bg-violet-900  border-b-2 hover:text-white rounded font-semibold  ";
   };
 
   return (

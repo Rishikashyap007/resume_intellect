@@ -223,7 +223,7 @@ const ProfileForm = () => {
         
         <form onSubmit={handleSubmit}>
           <div className="">
-            <label className="block mb-2">Change Your Image:</label>
+            <label className="block mb-2 ">Change Your Image:</label>
             <div className="md:flex items-center ">
               <input
                 type="file"

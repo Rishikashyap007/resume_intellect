@@ -60,19 +60,23 @@ function Payment() {
     
 
   return (
-    <div className="min-h-screen mien bg-gray-300 flex w-full p-2">
+    <div className="min-h-screen flex w-full p-2">
          
       <div className="bg-white shadow-md rounded-lg  w-full">
         <table className="min-w-full leading-normal">
           <thead>
             <tr>
-              <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 tracking-wider">
                 <div className="text-center mt-4">
-                  <p className="text-lg font-bold text-violet-900 m">Free</p>
-                  <button className='bg-red-200 text-blue-900 p-2 px-6 rounded-lg m-4  disabled:'>Your Plan</button>
+                <p className="text-lg font-bold">Resume Builder</p>
+                <span className=" text-violet-900 ">Starting </span>
+                <span className=" text-violet-900 font-bold text-lg"> $0</span> <br/>                 
+                <Link href={'/dashboard/aibuilder'}>
+                <button className='bg-red-200 text-blue-900 p-2 px-6 rounded-lg m-4  disabled:'>Your Plan</button>
+                </Link>
                 </div>
               </th>
-              <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600  tracking-wider">
+              {/* <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600  tracking-wider">
                 <div className="text-center">
                   <p className="text-lg font-bold ">AI resume writer</p>
                   <span className=" text-violet-900 font-bold text-lg"> $49</span> <span className=" text-violet-900 ">/One Time Purchase</span><br/>
@@ -86,7 +90,7 @@ function Payment() {
                 </Link>
                  
                 </div>
-              </th>
+              </th> */}
               <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600  tracking-wider">
                 <div className="text-center">
                   <p className="text-lg font-bold">Expert human writer</p>
@@ -118,13 +122,13 @@ function Payment() {
           </thead>
 
           <tbody>
-                        <tr className='text-center'>
+                        {/* <tr className='text-center'>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600"> ✔️ Create optimized resumes</p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600"> ✔️ Create optimized resumes</p>
-                            </td>
+                            </td> 
                             
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600"> ✔️ Create optimized resumes</p>
@@ -134,15 +138,34 @@ function Payment() {
                                 <p className="text-gray-600"> ✔️ Create optimized resumes</p>
                             </td>
                             
-                        </tr>
-                        
+                        </tr> */}
+                        <tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Create optimized resumes</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Create optimized resumes</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Create optimized resumes</p>
+    </div>
+  </td>
+  </tr>
                         <tr className='text-center'>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Copy and paste content from site</p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Copy and paste content from site</p>
-                            </td>
+                            </td> */}
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Receive resume in pdf and docs</p>
                             </td>
@@ -154,9 +177,9 @@ function Payment() {
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Unlimited resumes edits</p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Unlimited resumes edits</p>
-                            </td>
+                            </td> */}
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Cover letter included</p>
                             </td>
@@ -169,11 +192,11 @@ function Payment() {
 
                         <tr className='text-center'>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✖️ </p>
+                                <p className="text-gray-600"> ✔️ Save resume as pdf and docs </p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Save resume as pdf and docs</p>
-                            </td>
+                            </td> */}
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ 3 revisions included</p>
                             </td>
@@ -186,11 +209,11 @@ function Payment() {
                         </tr>
                         <tr className='text-center'>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✖️ </p>
+                                <p className="text-gray-600"> ✔️ Download fully formatted Resume </p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Download fully formatted Resume</p>
-                            </td>
+                            </td> */}
                             
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Speak one on one with writer</p>
@@ -205,28 +228,24 @@ function Payment() {
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✖️ </p>
                             </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✖️ </p>
                             </td>
-                            
+                             */}
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p className="text-gray-600">✔️ Final Delivery 1 week</p>
                             </td>
 
                              
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️Final Delivery 1 week</p>
+                                <p className="text-gray-600">✔️ Final Delivery 1 week</p>
                             </td>
                             
                         </tr>
                       
-                    </tbody>
-
-                    
+                    </tbody>        
         </table>
       </div>
-
-     
     </div>
   );
 }
