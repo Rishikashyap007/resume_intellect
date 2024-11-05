@@ -49,7 +49,7 @@ const Template16 = () => {
                     alt="profile"
                     width={100}
                     height={100}
-                    className="object-cover h-full w-full"
+                    className="object-cover h-full w-full rounded-full"
                   />
             </div>
               <div class="text-left text-white">
@@ -136,7 +136,10 @@ const Template16 = () => {
               <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>ABOUT ME</h2>
                 <div class="border-solid border-2 border-sky-500 mb-5"></div>
-                <p>
+                <p 
+                className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                contentEditable="true"
+                      suppressContentEditableWarning={true}>
                 {resumeData.summary}
                 </p>
               </div>
@@ -144,7 +147,7 @@ const Template16 = () => {
                 <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>EXPERIENCE</h2>
                 
                 <div>
-                  <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3>
+                  {/* <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3> */}
                   {resumeData.workExperience.length > 0 && (
                           <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
                             {(provided) => (
@@ -174,7 +177,10 @@ const Template16 = () => {
                                           />
                                         </div>
                                         <p className="content">{item.position}</p>
-                                        <p className="content hyphens-auto">
+                                        <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                         contentEditable="true"
+                                         suppressContentEditableWarning={true}
+                                        >
                                           {item.description}
                                         </p>
                                         <Droppable

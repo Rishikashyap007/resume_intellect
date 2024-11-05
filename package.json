@@ -27,6 +27,7 @@
     "html2pdf.js": "^0.10.2",
     "i": "^0.3.7",
     "jspdf": "^2.5.2",
+    "lucide-react": "^0.454.0",
     "next": "13.1.6",
     "next-videos": "^1.4.1",
     "pdfjs-dist": "^4.6.82",

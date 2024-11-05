@@ -56,20 +56,24 @@ const Template25 = () => {
         </div>  
         <div class="flex gap-2 items-start ">
             <div class="w-2/3 text-left">
-              <h1 className="text-8xl text-black font-bold uppercase mb-4" style={{ color: headerColor }}>Resume</h1>
+              {/* <h1 className="text-8xl text-black font-bold uppercase mb-4" style={{ color: headerColor }}>Resume</h1> */}
               <div className="mb-8 pt-2.5	flex justify-between">    
-                  <h1 className="text-2xl text-black font-light mb-4" style={{ color: headerColor }}>{resumeData.name}</h1>
+                  <h1 className="text-2xl text-black font-bold mb-4" style={{ color: headerColor }}>{resumeData.name}</h1>
                   <h2 className="text-2xl text-black tracking-wide uppercase font-light mb-4" style={{ color: headerColor }}>{resumeData.position}</h2>
               </div>
               <div className="mb-5">
                   <h2 className="text-xl font-bold mb-4 text-black" style={{ color: headerColor }}>ABOUT ME</h2>
-                  <p class="text-black font-light">
+                  <p class="text-black font-light hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                  contentEditable="true"
+                  suppressContentEditableWarning={true}
+                  >
                     {resumeData.summary}
                   </p>
               </div>
             </div>
             <div class="mb-5 w-1/3">
-                  <img src="img/profile_one.png"></img>
+            <img src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
+
             </div>
         </div>
         <div class="flex gap-2 items-start justify-between">
@@ -107,7 +111,9 @@ const Template25 = () => {
                                             />
                                           </div>
                                           <p className="content">{item.position}</p>
-                                          <p className="content hyphens-auto">
+                                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                          contentEditable="true"
+                                          suppressContentEditableWarning={true}>
                                             {item.description}
                                           </p>
                                           <Droppable

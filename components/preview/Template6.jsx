@@ -84,7 +84,10 @@ const Template6 = () => {
                                   />
                                 </div>
                                 <p className="content leading-relaxed">{item.position}</p>
-                                <p className="content hyphens-auto leading-loose">
+                                <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                contentEditable="true"
+                                suppressContentEditableWarning={true}
+                                >
                                   {item.description}
                                 </p>
                                 <Droppable
@@ -290,7 +293,7 @@ const Template6 = () => {
                   </ul>
                 )}
               </Droppable>
-              <p className="text-gray-700 mt-4 text-orange-600" style={{ color: headerColor }}>Languages:</p>
+              <p className="text-gray-700 mt-4 md:text-orange-600" style={{ color: headerColor }}>Languages:</p>
               <Language languages={resumeData.languages} />
               <Certification
                 title="Certifications"

@@ -54,7 +54,10 @@ const Template3 = () => {
         </header>
 
         <section className="mb-6">
-          <p className="text-xm font-semibold text-gray-500 mb-2">{resumeData.summary}</p>
+          <p className="text-xm font-semibold text-gray-500 mb-2 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+          contentEditable="true"
+          suppressContentEditableWarning={true}
+          >{resumeData.summary}</p>
         </section>
 
         <section className="mb-6">
@@ -95,7 +98,9 @@ const Template3 = () => {
                               />
                             </div>
                             <p className="content">{item.position}</p>
-                            <p className="content hyphens-auto text-gray-500">
+                            <p className="content hyphens-auto hover:text-gray-500"
+                            contentEditable="true"
+                            suppressContentEditableWarning={true}>
                               {item.description}
                             </p>
                             <Droppable

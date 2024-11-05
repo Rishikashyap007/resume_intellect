@@ -41,7 +41,7 @@ const Template24 = () => {
         <div className="max-w-3xl mx-auto p-5 bg-neutral-300 shadow-md border-solid border-2 border-black mb-5 rounded-lg">
         <div class="flex gap-1 items-start ">
             <div class="border-solid border-cyan-900 mb-5 w-1/3">
-              <img src="img/profile_one.png"></img>
+            <img src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" className="rounded-full " />
             </div>
             <div className="mb-8 pt-2.5	w-2/3 text-left">
                 <div class="border-solid border-2 border-black mb-2 "></div>
@@ -54,7 +54,10 @@ const Template24 = () => {
         <div className="mb-5">
           <h2 className="text-xl font-bold mb-4 text-black" style={{ color: headerColor }}>ABOUT ME</h2>
           {/* <div class="border-solid border-b-2 border-cyan-800 mb-5"></div> */}
-          <p class="text-black font-light">
+          <p 
+          contentEditable="true"
+          suppressContentEditableWarning={true}
+          class="text-black font-light hover:outline-dashed hover:outline-2 hover:outline-gray-400">
           {resumeData.summary}
           </p>
         </div>
@@ -93,7 +96,9 @@ const Template24 = () => {
                                       />
                                     </div>
                                     <p className="content">{item.position}</p>
-                                    <p className="content hyphens-auto">
+                                    <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                    contentEditable="true"
+                                    suppressContentEditableWarning={true}>
                                       {item.description}
                                     </p>
                                     <Droppable

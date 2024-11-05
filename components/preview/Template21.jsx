@@ -38,21 +38,23 @@ const Template21 = () => {
     ];
 
     return (
-        <div className="max-w-3xl mx-auto p-5 bg-white-500 shadow-md">
+        <div className="max-w-3xl mx-auto p-5 bg-white-500 shadow-md border">
           <div class="flex"> 
 
           
             <div class="bg-cyan-500 p-5 w-1/3">
                 <div class="rounded-full border-solid	border-white-500 mb-5">
-                  <img src="img/profile_one.png"></img>
-                  <div class="border-solid rounded border-b-2 border-white-800 mb-2 mt-2"></div>
+                <img className="rounded-full" src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
+                <div class="border-solid rounded border-b-2 border-white-800 mb-2 mt-2"></div>
                 </div>
                 <div className="mb-8">
                   <div class="flex">
                       <h2 className="text-xl capitalize text-white font-bold mb-4" style={{ color: headerColor }}>About me</h2>
                       <div class="border-solid rounded border-b-2 border-white mb-2 mt-2"></div>
                   </div>
-                  <p class="text-sm text-white">
+                  <p class="text-sm text-white hover:outline-dashed hover:outline-2 hover:outline-gray-400 hover:scale-105 "contentEditable="true"
+                      suppressContentEditableWarning={true}
+                  >
                   {resumeData.summary}
                   </p>
                 </div>
@@ -146,7 +148,9 @@ const Template21 = () => {
                                             />
                                           </div>
                                           <p className="content text-cyan-800">{item.position}</p>
-                                          <p className="content hyphens-auto text-cyan-800">
+                                          <p className="content hyphens-auto text-cyan-800 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                          contentEditable="true"
+                                          suppressContentEditableWarning={true}>
                                             {item.description}
                                           </p>
                                           <Droppable

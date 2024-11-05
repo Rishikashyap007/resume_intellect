@@ -47,7 +47,7 @@ const Template20 = () => {
                     <div class="inline-block border-solid border-b-2 border-gray-800 mb-2 w-1/4"></div>
                     <h2 className="text-2xl font-semibold mb-3 text-slate-500 	" style={{ color: headerColor }}>{resumeData.position}</h2>
                 </div>
-                <div class="text-left text-white text-center bg-zinc-700">
+                <div class="text-left text-white bg-zinc-700">
                     <div className="mb-8">
                       {/* <h2 className="text-xl text-black font-bold mb-4 bg-yellow-600 h-1/5 w-5/12	 bg-cover" style={{ color: headerColor }}>CONTACT</h2> */}
                       <ContactInfo
@@ -67,7 +67,10 @@ const Template20 = () => {
                       <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>ABOUT ME</h2>
                   </div>
                   
-                  <p>
+                  <p 
+                   className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                  contentEditable="true"
+                      suppressContentEditableWarning={true}>
                   {resumeData.summary}
                   </p>
                 </div>
@@ -79,7 +82,7 @@ const Template20 = () => {
                   <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>EXPERIENCE</h2>
                   
                   <div>
-                    <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3>
+                    {/* <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3> */}
                     {resumeData.workExperience.length > 0 && (
                             <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
                               {(provided) => (
@@ -109,7 +112,10 @@ const Template20 = () => {
                                             />
                                           </div>
                                           <p className="content">{item.position}</p>
-                                          <p className="content hyphens-auto">
+                                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                           contentEditable="true"
+                                           suppressContentEditableWarning={true}
+                                          >
                                             {item.description}
                                           </p>
                                           <Droppable

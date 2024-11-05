@@ -102,7 +102,10 @@ const Template5 = () => {
                           />
                         </div>
                         <p className="content">{item.position}</p>
-                        <p className="content hyphens-auto">
+                        <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                          contentEditable="true"
+                          suppressContentEditableWarning={true}
+                        >
                           {item.description}
                         </p>
                         <Droppable

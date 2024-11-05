@@ -23,7 +23,7 @@ const PersonalInformation = () => {
             type="file"
             name="profileImage"
             accept="image/*"
-            className="bg-gray-300 text-sm text-black py-2 px-4 rounded-md"
+            className="bg-gray-300 text-sm text-black py-2 px-4 rounded-lg"
             onChange={handleProfilePicture}
             placeholder="Profile Picture"
           />
@@ -34,7 +34,7 @@ const PersonalInformation = () => {
             type="text"
             placeholder="Full Name"
             name="name"
-            className="w-full p-2 border border-black rounded-md"
+            className="w-full p-2 border border-black rounded-lg"
             value={resumeData.name}
             onChange={handleChange}
           />
@@ -42,7 +42,7 @@ const PersonalInformation = () => {
             type="text"
             placeholder="Job Title"
             name="position"
-            className="w-full p-2 border border-black rounded-md"
+            className="w-full p-2 border border-black rounded-lg"
             value={resumeData.position}
             onChange={handleChange}
           />
@@ -50,7 +50,7 @@ const PersonalInformation = () => {
             type="text"
             placeholder="Contact Information"
             name="contactInformation"
-            className="w-full p-2 border border-black rounded-md"
+            className="w-full p-2 border border-black rounded-lg"
             value={resumeData.contactInformation}
             onChange={handleChange}
             minLength="10"
@@ -60,7 +60,7 @@ const PersonalInformation = () => {
             type="email"
             placeholder="Email"
             name="email"
-            className="w-full p-2 border border-black rounded-md"
+            className="w-full p-2 border border-black rounded-lg"
             value={resumeData.email}
             onChange={handleChange}
           />
@@ -68,7 +68,7 @@ const PersonalInformation = () => {
             type="text"
             placeholder="Address"
             name="address"
-            className="w-full p-2 border border-black rounded-md"
+            className="w-full p-2 border border-black rounded-lg"
             value={resumeData.address}
             onChange={handleChange}
           />

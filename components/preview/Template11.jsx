@@ -65,7 +65,9 @@ const Template11 = () => {
           <div className="left-column flex-1 p-5">
             <div className="about-me mb-5">
               <h2 className="bg-[#2b3d63] text-white p-3 -mx-5 mb-5"  style={{ color: headerColor,backgroundColor: backgroundColorss }}>About Me</h2>
-              <p>
+              <p className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+              contentEditable="true"
+              suppressContentEditableWarning={true}>
                 {resumeData.summary}
               </p>
             </div>
@@ -148,7 +150,9 @@ const Template11 = () => {
                                   />
                                 </div>
                                 <p className="content">{item.position}</p>
-                                <p className="content hyphens-auto">
+                                <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                contentEditable="true"
+                                suppressContentEditableWarning={true}>
                                   {item.description}
                                 </p>
                                 <Droppable

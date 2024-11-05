@@ -44,7 +44,7 @@ const Template23 = () => {
         
           <div class=" w-1/3 p-5 	">
             <div class="border-solid border-cyan-900 mb-5">
-              <img src="img/profile_one.png"></img>
+            <img src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" className="rounded-full"/>
             </div>
               <div class="text-left text-cyan-900">
                   <div className="mb-8">
@@ -133,7 +133,9 @@ const Template23 = () => {
               <div className="p-5">
                 <h2 className="text-xl font-bold mb-4 text-cyan-900" style={{ color: headerColor }}>ABOUT ME</h2>
                 <div class="border-solid border-b-2 border-cyan-800 mb-5"></div>
-                <p class="text-zinc-500">
+                <p class="text-zinc-500 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                contentEditable="true"
+                suppressContentEditableWarning={true}>
                 {resumeData.summary}
                 </p>
               </div>
@@ -171,7 +173,10 @@ const Template23 = () => {
                                           />
                                         </div>
                                         <p className="content">{item.position}</p>
-                                        <p className="content hyphens-auto">
+                                        <p 
+                                        contentEditable="true"
+                                        suppressContentEditableWarning={true}
+                                        className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400">
                                           {item.description}
                                         </p>
                                         <Droppable

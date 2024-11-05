@@ -57,7 +57,8 @@ const Template10 = () => {
           </header>
 
           <section className="mb-5">
-            <p className="text-sm text-gray-500 leading-relaxed">{resumeData.summary}</p>
+            <p className="text-sm text-gray-500 leading-relaxed hover:outline-dashed hover:outline-2 hover:outline-gray-400" contentEditable="true"
+                      suppressContentEditableWarning={true}>{resumeData.summary}</p>
           </section>
 
           <section className="mb-5">
@@ -77,7 +78,8 @@ const Template10 = () => {
                     />
                   </span>
 
-                  <p className="content hyphens-auto text-gray-500">{item.description}</p>
+                  <p className="content hyphens-auto text-gray-500 hover:outline-dashed hover:outline-2 hover:outline-gray-400" contentEditable="true"
+                      suppressContentEditableWarning={true}>{item.description}</p>
 
                   <Droppable
                     droppableId={`WORK_EXPERIENCE_KEY_ACHIEVEMENT-${index}`}

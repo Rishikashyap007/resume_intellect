@@ -141,7 +141,8 @@ const Template18 = () => {
                 <div className="mb-8">
                   <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>ABOUT ME</h2>
                   <div class="border-solid border-b-2 border-gray-800 mb-5"></div>
-                  <p>
+                  <p className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"  contentEditable="true"
+  suppressContentEditableWarning={true}>
                   {resumeData.summary}
                   </p>
                 </div>
@@ -149,7 +150,7 @@ const Template18 = () => {
                   <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>EXPERIENCE</h2>
                   
                   <div>
-                    <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3>
+                    {/* <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Projects</h3> */}
                     {resumeData.workExperience.length > 0 && (
                             <Droppable droppableId="work-experience" type="WORK_EXPERIENCE">
                               {(provided) => (
@@ -179,7 +180,10 @@ const Template18 = () => {
                                             />
                                           </div>
                                           <p className="content">{item.position}</p>
-                                          <p className="content hyphens-auto">
+                                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                          contentEditable="true"
+                                          suppressContentEditableWarning={true}
+                                          >
                                             {item.description}
                                           </p>
                                           <Droppable

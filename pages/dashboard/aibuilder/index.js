@@ -2,8 +2,6 @@ import Navbar from "../../Navbar/Navbar";
 import ProfileForm from "../../profile";
 import ProfilePage from "../Profile";
 import Sidebar from "../Sidebar";
-
-
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 

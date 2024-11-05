@@ -41,10 +41,11 @@ const Template27 = () => {
         <div className="max-w-3xl mx-auto p-5 bg-white shadow-md mb-5">
           <div class="flex">
             <div class="mb-5 w-1/4">
-                  <img src="img/profile_one.png"></img>
+            <img src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
+
             </div>
             <div className="mb-8 pt-2.5 w-3/4">    
-                <h1 className="text-6xl text-black font-bold mb-2 text-black" style={{ color: headerColor }}>{resumeData.name}</h1>
+                <h1 className="text-6xl text-black font-bold mb-2" style={{ color: headerColor }}>{resumeData.name}</h1>
                 <h2 className="text-2xl text-black tracking-wide uppercase font-light mb-4" style={{ color: headerColor }}>{resumeData.position}</h2>
             </div>
           </div>
@@ -64,7 +65,9 @@ const Template27 = () => {
           </div>
           <div className="mb-5">
               <h2 className="text-xl font-bold mb-4 text-black" style={{ color: headerColor }}>ABOUT ME</h2>
-              <p class="text-black font-light">
+              <p class="text-black font-light hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+              contentEditable="true"
+              suppressContentEditableWarning={true}>
                 {resumeData.summary}
               </p>
           </div>
@@ -118,7 +121,7 @@ const Template27 = () => {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    className={`text-black font-light mb-5 hover:scale-105 transition-transform duration-300 mb-1 ${snapshot.isDragging &&
+                                    className={`text-black font-light mb-5 hover:scale-105 transition-transform duration-300 ${snapshot.isDragging &&
                                       "outline-dashed outline-2 outline-gray-400 bg-white"
                                       }`}
                                   >
@@ -131,7 +134,9 @@ const Template27 = () => {
                                       />
                                     </div>
                                     <p className="content">{item.position}</p>
-                                    <p className="content hyphens-auto">
+                                    <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                                    contentEditable="true"
+                                    suppressContentEditableWarning={true}>
                                       {item.description}
                                     </p>
                                     <Droppable

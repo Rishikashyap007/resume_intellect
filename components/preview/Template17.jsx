@@ -56,7 +56,7 @@ const Template17 = () => {
             </div>
               <div class="text-left text-white">
                   <div className="mb-8">
-                    <h2 className="text-xl text-black font-bold mb-4 bg-yellow-600 h-1/5 w-5/12	 bg-cover" style={{ color: headerColor }}>CONTACT</h2>
+                    <h2 className="text-xl text-black font-bold mb-4 bg-yellow-600 h-1/5 	 bg-cover" style={{ color: headerColor }}>CONTACT</h2>
                     <ContactInfo
                           mainclass=" gap-1 mb-1 text-black mb-5 contact"
                           linkclass="inline-flex items-center gap-1"
@@ -70,7 +70,7 @@ const Template17 = () => {
                   </div>
               </div>
               <div className="mb-8">
-                <h2 className="text-xl text-black mb-5 font-bold mb-4 bg-yellow-600 h-1/5 w-5/12	 bg-cover" style={{ color: headerColor }}>EDUCATION</h2>
+                <h2 className="text-xl text-black mb-5 font-bold mb-4 bg-yellow-600 h-1/5	 bg-cover" style={{ color: headerColor }}>EDUCATION</h2>
                 <div className="mb-4">
                 <ul className="list-none p-0">
                   {resumeData.education.length > 0 && (
@@ -93,7 +93,7 @@ const Template17 = () => {
                 </div>
               </div>
               <div className="mb-8">
-                <h2 className="text-xl font-bold text-black mb-4 bg-yellow-600 h-1/5 w-5/12	 bg-cover" style={{ color: headerColor }}>SKILLS</h2>
+                <h2 className="text-xl font-bold text-black mb-4 bg-yellow-600 h-1/5	 bg-cover" style={{ color: headerColor }}>SKILLS</h2>
               
                 <Droppable droppableId="skills" type="SKILLS">
                           {(provided) => (
@@ -124,7 +124,7 @@ const Template17 = () => {
                         </Droppable>
               </div>
               <div className="mb-8">
-                <h2 className="text-xl font-bold text-black bg-yellow-600 h-1/5 w-5/12	 bg-cover" style={{ color: headerColor }}>LANGUAGE</h2>
+                <h2 className="text-xl font-bold text-black bg-yellow-600 h-1/5 	 bg-cover" style={{ color: headerColor }}>LANGUAGE</h2>
                 <div className="flex text-black justify-start mb-4 font-bold">
                 <Language  languages={resumeData.languages} />
                 </div>
@@ -138,7 +138,9 @@ const Template17 = () => {
               <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4" style={{ color: headerColor }}>ABOUT ME</h2>
                 <div class="border-solid border-b-2 border-gray-800 mb-5"></div>
-                <p>
+                 <p className="hover:outline-dashed hover:outline-2 hover:outline-gray-400" 
+                contentEditable="true"
+                      suppressContentEditableWarning={true}>
                 {resumeData.summary}
                 </p>
               </div>
@@ -176,7 +178,10 @@ const Template17 = () => {
                                           />
                                         </div>
                                         <p className="content">{item.position}</p>
-                                        <p className="content hyphens-auto">
+                                        <p
+                                        contentEditable="true"
+                                        suppressContentEditableWarning={true} 
+                                        className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400">
                                           {item.description}
                                         </p>
                                         <Droppable
