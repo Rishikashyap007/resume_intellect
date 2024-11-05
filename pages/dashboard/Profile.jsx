@@ -461,11 +461,114 @@ const ProfilePage = () => {
   return (
     <>
       <Navbar/>
-      <div className="bg-indigo-900 p-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-lg shadow-lg p-6 bg-indigo-800 flex flex-col md:flex-row justify-between items-center md:h-44">
-            <div className="space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-full">
-              <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
+      <div className="bg-indigo-900">
+  <div className="max-w-7xl mx-auto">
+    <div className="rounded-lg shadow-lg p-4 bg-indigo-900 flex flex-col md:flex-row justify-between items-center">
+      {/* Profile Section */}
+      <div className="flex items-center space-x-4 w-full md:w-1/2">
+        <img
+          src={`https://api.resumeintellect.com/${formData.photo}` || "https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"}
+          alt="Please Upload Profile Photo"
+          className="w-16 h-16 rounded-full"
+        />
+        <div className="flex flex-col">
+          <div className="text-white">
+            <h2 className="text-xl font-semibold">{formData.first_name || "Please update your [Name]"} {formData.last_name || "!"}</h2>
+            <p className="text-sm">{formData.professional_title || "Please update your Profile Title!"}</p>
+          </div>
+          <div className="text-white text-sm mt-2">
+            <p>📧 {formData.email || "Please update your [Email]"}</p>
+            <p>📱 {formData.phone || "Please update your [Phone]"}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Vertical Divider */}
+      <div className="hidden md:block border-[0.5px] border-gray-500 h-24"></div>
+
+      {/* Buttons Section */}
+      <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto md:ml-4">
+        {resumes.length > 0 && (
+          <button
+            className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 w-full md:w-auto text-sm"
+            onClick={() => handleGetScore(resumes[0])}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg className="animate-spin h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                Loading...
+              </span>
+            ) : scores[resumes[0].id] !== undefined ? scores[resumes[0].id] : 'Resume Score'}
+          </button>
+        )}
+        
+        <div className="flex items-center gap-2">
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="hidden"
+            id="fileInput"
+            accept=".pdf"
+          />
+          <label
+            htmlFor="fileInput"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer text-sm whitespace-nowrap"
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg className="animate-spin h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                {uploadProgress}%
+              </span>
+            ) : (
+              'Upload Resume'
+            )}
+          </label>
+          {selectedFile && (
+            <span className="text-white text-sm truncate max-w-[150px]">
+              {selectedFile.name}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Modal remains unchanged */}
+  {isModalOpen && (
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+      <div className="bg-gray-700 p-10 rounded shadow-lg text-white">
+        <h2 className="text-xl font-semibold text-white">Resume Score</h2>
+        <p><strong>Content Accuracy Percentage: </strong> {modalContent}</p>
+        <div className="flex mt-4">
+          <button
+            onClick={copyToClipboard}
+            className="bg-blue-500 text-white py-1 px-4 rounded mr-2 hover:bg-blue-600"
+          >
+            Copy
+          </button>
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className="bg-yellow-500 text-white py-1 px-4 rounded hover:bg-yellow-600"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+      {/* <div className="bg-indigo-900 p-4 ">
+        <div className="w-full">
+          <div className="rounded-lg shadow-lg p-6 bg-indigo-800 flex flex-col md:flex-row justify-between items-center border border-red-800">
+            <div className="space-y-4 mb-6 md:mb-0 md:mr-6 md:pr-6 w-full ">
+              <div className="flex flex-col md:flex-row md:items-center md:space-x-4 ">
                 <img
                   src={`https://api.resumeintellect.com/${formData.photo}` || "https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"}
                   alt="Please Upload Profile Photo"
@@ -560,7 +663,7 @@ const ProfilePage = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
