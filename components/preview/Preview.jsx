@@ -230,8 +230,8 @@ const Preview = ({ selectedTemplate }) => {
       <A4PageWrapper>
         <HighlightMenu
           styles={{
-            borderColor: "#C026D3",
-            backgroundColor: "#C026D3",
+            borderColor: "",
+            backgroundColor: "#c5c9c9",
             boxShadow: "0px 5px 5px 0px rgba(0, 0, 0, 0.15)",
             zIndex: 10,
             borderRadius: "5px",

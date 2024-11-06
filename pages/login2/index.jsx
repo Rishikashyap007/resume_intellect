@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import logo from "./logo.jpg";
-import toast from "react-hot-toast";
+import { toast } from 'react-toastify';
 import Modal from "./Modal";
 import Signup from "./Signup";
 import Image from "next/image";
@@ -9,6 +9,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Navbar from "../Navbar/Navbar";
+
 
 const Login2 = () => {
   const [isThirdstepOpen, setThirdstepOpen] = useState(false);
@@ -39,12 +40,10 @@ const Login2 = () => {
       );
 
       if (response.status === 200) {
-        toast.success("Login successfully");
         console.log(response);
         console.log("Token", response.data.data.token);
         localStorage.setItem("token", response.data.data.token);
-        localStorage.setItem("email", response.data.data.email);
-console.log( response.data.data.token)
+        toast.success(`${response.data.message}`|| "Login Successfully")
 router.push("/dashboard/page");
       } else {
         toast.error("Failed to login");
