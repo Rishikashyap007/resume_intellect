@@ -25,7 +25,7 @@ const Navbar = () => {
         try {
           const response = await fetch('https://api.resumeintellect.com/api/user/user-profile', {
             headers: {
-              'Authorization': `Bearer ${token}`,
+              'Authorization': token,
             },
           });
           if (response.ok) {
@@ -139,10 +139,10 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>AI Resume Builder</Link>
-              <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>Resources</Link>
-              <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>About Us</Link>
-              <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>Blog</Link>
+              <Link href="/navbarcontent" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>AI Resume Builder</Link>
+              <Link href="https://blog.resumeintellect.com/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>Resources</Link>
+              <Link href="https://blog.resumeintellect.com/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>About Us</Link>
+              <Link href="https://blog.resumeintellect.com/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={handleLinkClick}>Blog</Link>
 
               {isLoggedIn ? (
                 <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-semibold" onClick={() => { handleLogout(); handleLinkClick(); }}>Logout</Link>

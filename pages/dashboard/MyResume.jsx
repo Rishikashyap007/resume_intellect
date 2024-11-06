@@ -4,6 +4,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { toast, ToastContainer } from 'react-toastify';
 import { ResumeContext } from "../../pages/builder";
+import Link from "next/link";
 
 const MyResume = () => {
   const { setResumeData } = useContext(ResumeContext);
@@ -191,6 +192,7 @@ const MyResume = () => {
         return;
       }
 
+
       // Parse the ai_resume_parse_data
       const parsedData = JSON.parse(resumeData.ai_resume_parse_data);
       console.log(parsedData.templateData, "maia data hu");
@@ -200,6 +202,11 @@ const MyResume = () => {
       localStorage.setItem('resumeData', JSON.stringify(parsedData.templateData));
       localStorage.setItem('resumeId', resumeData.id);
       localStorage.setItem('location', resumeData.file_path);
+
+
+  
+   
+  
 
       console.log("Resume data retrieved successfully");
 
@@ -266,8 +273,8 @@ const MyResume = () => {
                     <button className="text-black">
                       <i className="fas fa-upload">📤</i>
                     </button>
-                    <button className="text-black" onClick={() => handleEditResume(resume)}>
-                      <i className="fas fa-edit">🖍</i>
+                    <button className="text-black" >
+                   <Link href={`/dashboard/aibuilder/${resume.id}`}>   <i className="fas fa-edit">🖍</i></Link>
                     </button>
                     <button className="text-black" onClick={() => handleopenDeleteModal(resume.id)}>
                       <i className="fas fa-trash">🗑️</i>

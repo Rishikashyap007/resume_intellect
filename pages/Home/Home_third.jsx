@@ -249,9 +249,8 @@ function Home_third() {
               <div key={index} className='relative group'>
                 <Image src={template.src} alt={template.alt} className='h-96 w-full rounded-xl' />
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
-                <Link href="/dashboard/profile">
-                  <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit text-black bg-white font-bold py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Build Your Resume Now</button>
-                </Link>
+               
+               
               </div>
             ))}
           </div>
@@ -272,9 +271,7 @@ function Home_third() {
               <div key={index} className='relative group'>
                 <Image src={template.src} alt={template.alt} width={400} height={400} className='h-[400px] w-full rounded-xl object-cover' />
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
-                <Link href="/dashboard/profile">
-                  <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit bg-blue-600 text-white font-bold py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Create Your Resume</button>
-                </Link>
+                
               </div>
             ))}
           </div>
@@ -294,9 +291,7 @@ function Home_third() {
               <div key={index} className='relative group'>
                 <Image src={template.src} alt={template.alt} className='h-[400px] w-full border-2 rounded-lg shadow-xl shadow-gray-500' />
                 <h1 className='font-bold text-xl text-center mt-2' id='homecard'>{template.title}</h1>
-                <Link href="/dashboard/profile">
-                  <button className='absolute top-0 left-0 right-0 bottom-0 m-auto w-fit h-fit bg-blue-600 text-white font-bold py-2 px-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' id='home_third'>Create Your CV</button>
-                </Link>
+               
               </div>
             ))}
           </div>

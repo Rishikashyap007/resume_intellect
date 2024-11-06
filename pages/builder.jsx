@@ -46,9 +46,15 @@ export default function Builder({ onClose }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [token, setToken] = useState(null);
   const [resumeId, setResumeId] = useState(null);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
   const pdfExportComponent = useRef(null);
+
+
+  const router = useRouter(); 
+  const { id } = router.query;
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -126,11 +132,44 @@ export default function Builder({ onClose }) {
     }
   };
 
+
   const prevSection = () => {
     if (currentSection > 0) {
       handleSectionClick(currentSection - 1);
     }
   };
+
+ 
+  useEffect(() => {
+    // Ensure we only run this in the browser, where `localStorage` is available
+    if (typeof window !== 'undefined') {
+      const { token } = router.query; // Get the token from the URL
+      const orderid = localStorage.getItem('orderid');
+
+     
+      if (token ) {
+        
+        axios
+          .get(`https://api.resumeintellect.com/api/user/paypal/verify-order?orderid=${orderid}`)
+          .then(response => {
+            // Check if the response indicates success
+            if (response.data && response.data === 'success') {
+              // If successful, download the PDF
+              downloadAsPDF();
+            } else {
+              // Otherwise, redirect to /transaction
+              router.push('/transaction');
+            }
+          })
+          .catch(error => {
+            console.error("Error verifying order:", error);
+            // Redirect to /transaction on error
+            router.push('/transaction');
+          });
+      } 
+    }
+  }, [router.query]);
+
 
   const pdfExportOptions = {
     paperSize: "A4",
@@ -146,6 +185,17 @@ export default function Builder({ onClose }) {
     if (pdfExportComponent.current) {
       pdfExportComponent.current.save();
     }
+
+ 
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Clear the token
+    setIsLoggedIn(false); // Update login state
+  };
+  const getLinkClassName = (path) => {
+    return router.pathname === path
+      ? "flex items-center p-2 bg-violet-900 border-b-2 rounded font-semibold text-white"
+      : "flex items-center p-2 hover:bg-violet-900  border-b-2 rounded font-semibold  ";
+
   };
 
   const handleFinish = async () => {
@@ -227,6 +277,7 @@ export default function Builder({ onClose }) {
     }
   };
 
+
   // Mobile Navigation Component
   const MobileNavigation = () => (
     <div className="fixed px-2 bottom-0 left-0 right-0 bg-white shadow-lg py-4 md:hidden">
@@ -247,6 +298,200 @@ export default function Builder({ onClose }) {
         >
           {currentSection === sections.length - 1 ? "Finish" : "Next"}
         </button>
+
+  
+  return (
+    <>
+      <ResumeContext.Provider
+        value={{
+          resumeData,
+          setResumeData,
+          handleProfilePicture,
+          handleChange,
+          headerColor,
+          backgroundColorss,
+        }}
+      >
+        <Meta
+          title="ATSResume | Get hired with an ATS-optimized resume"
+          description="ATSResume is a cutting-edge resume builder that helps job seekers create a professional, ATS-friendly resume in minutes..."
+          keywords="ATS-friendly, Resume optimization..."
+        />
+
+        {!isFinished && (
+          <div className="flex"> 
+           <LoadUnload/>
+           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <MyResume  />
+      </Modal>
+      <div className="relative">
+      {/* Toggle button for smaller screens */}
+      <button
+        onClick={toggleSidebar}
+        className="md:hidden p-2 text-white bg-blue-900 fixed top-4 left-4 z-50 rounded "
+      >
+        ☰
+      </button>
+
+      {/* Sidebar */}
+      <div
+        className={`bg-white h-screen p-4 border-r border-gray-200 md:block fixed md:relative top-0 left-0 transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        }`}
+      >
+        <ul className="space-y-2 mt-4">
+          <li>
+            <Link
+              href=""
+              className="flex items-center p-2 bg-blue-900 border-b-2 border-black font-semibold text-white"
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-10">🖥️</span>
+              <span>Dashboard</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/page"
+              className={getLinkClassName("/dashboard/page")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">👤</span>
+              <span>Profile</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/aibuilder"
+              className={getLinkClassName("/dashboard/aibuilder")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">🤖</span>
+              <span>AI Resume Builder</span>
+            </Link>
+          </li>
+          <li
+           className={getLinkClassName("/dashboard/resumelist")}
+          onClick={() => { setIsModalOpen(true); toggleSidebar(); }}>
+            
+            <span className="mx-2">📑</span>
+            <span>Resumes List</span>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/notification"
+              className={getLinkClassName("/dashboard/notification")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">🔔</span>
+              <span>Notifications</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/skilltest"
+              className={getLinkClassName("/dashboard/skilltest")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">📝</span>
+              <span>Skill Test</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/addrefferal"
+              className={getLinkClassName("/dashboard/addrefferal")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">👥</span>
+              <span>Add Referral</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/skillhistorylist"
+              className={getLinkClassName("/dashboard/skillhistorylist")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">📊</span>
+              <span>Skill History</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="reffrerallistpage"
+              className={getLinkClassName("/dashboard/reffrerallistpage")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">👥</span>
+              <span>Referral List</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/paymentpage"
+              className={getLinkClassName("/dashboard/paymentpage")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">💳</span>
+              <span>Payment</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="password"
+              className={getLinkClassName("/dashboard/password")}
+              onClick={() => {
+                onClose();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">🔑</span>
+              <span>Change Password</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className="flex items-center p-2 hover:bg-violet-900 border-b-2 rounded font-semibold"
+              onClick={() => {
+                handleLogout();
+                toggleSidebar();
+              }}
+            >
+              <span className="mr-2">🔓</span>
+              <span>Log Out</span>
+            </Link>
+          </li>
+        </ul>
+
       </div>
     </div>
   );
@@ -700,6 +945,24 @@ export default function Builder({ onClose }) {
                   Pay & Download
                 </button>
               </div>
+
+
+              <button
+          type="button"
+          onClick={handleFinish}
+         // disabled={isFinished} // Optional, disable if already finished
+          className="bg-blue-950 text-white px-5 py-2 rounded-lg"
+        >
+          Save
+        </button>
+              <button
+                type="button"
+                className="rounded-lg px-10 lg:ms-2 font-bold bg-blue-950 text-white p-1"
+                onClick={handleDownloadResume}
+              >
+                Pay & Download
+              </button>
+
             </div>
 
             {/* Preview */}
