@@ -212,7 +212,7 @@ const ProfilePage = () => {
         }
       );
 
-      if (response.data.status === "success") {
+      if (response.status === "success") {
         toast.success("Resume uploaded successfully");
         // Safely store in localStorage
         if (typeof window !== 'undefined') {
@@ -255,7 +255,7 @@ const ProfilePage = () => {
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
               {/* Profile Information Section */}
               <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-4 flex-1">
-                <div className="w-20 h-20 sm:w-32 sm:h-32 flex-shrink-0">
+                <div className="w-10 h-10 sm:w-32 sm:h-32 flex-shrink-0">
                   <img
                     src={
                       formData.photo
@@ -267,8 +267,9 @@ const ProfilePage = () => {
                   />
                 </div>
 
-                <div className="text-center sm:text-left flex-1">
-                  <h2 className="text-xl sm:text-2xl font-semibold text-white">
+                {/* <div className="text-center sm:text-left flex flex-1 flex-row">
+                 <div>
+                 <h2 className="text-xl sm:text-2xl font-semibold text-white">
                     {formData.first_name || "Please update your [Name]"}{" "}
                     {formData.last_name || "!"}
                   </h2>
@@ -276,6 +277,7 @@ const ProfilePage = () => {
                     {formData.professional_title ||
                       "Please update your Profile Title!"}
                   </p>
+                 </div>
                   <div className="mt-2 space-y-1">
                     <p className="text-sm text-gray-300">
                       📧 {formData.email || "Please update your [Email]"}
@@ -284,7 +286,28 @@ const ProfilePage = () => {
                       📱 {formData.phone || "Please update your [Phone]"}
                     </p>
                   </div>
-                </div>
+                </div> */}
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left text-white p-4">
+  <div className="flex-1">
+    <h2 className="text-2xl font-semibold">
+      {formData.first_name || "Please update your [Name]"}{" "}
+      {formData.last_name || "!"}
+    </h2>
+    <p className="text-base text-gray-400 mt-1">
+      {formData.professional_title || "Please update your Profile Title!"}
+    </p>
+  </div>
+  
+  <div className="mt-4 sm:mt-0 sm:ml-6">
+    <p className="text-sm text-gray-300 flex items-center">
+      📧 <span className="ml-2">{formData.email || "Please update your [Email]"}</span>
+    </p>
+    <p className="text-sm text-gray-300 flex items-center mt-1">
+      📱 <span className="ml-2">{formData.phone || "Please update your [Phone]"}</span>
+    </p>
+  </div>
+</div>
+
               </div>
 
               {/* Vertical Divider - Only visible on larger screens */}

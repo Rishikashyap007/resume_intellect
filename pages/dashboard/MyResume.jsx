@@ -135,40 +135,86 @@ const MyResume = () => {
   };
 
 
-  const handleEditResume = async (resume) => {
-    console.log(resume.id,"id");
-    const token = localStorage.getItem("token");
+  // const handleEditResume = async (resume) => {
+  //   console.log(resume.id,"id");
+  //   const token = localStorage.getItem("token");
   
+  //   try {
+  //     // Fetch the resume details from the API
+  //     const response = await axios.get(`https://api.resumeintellect.com/api/user/resume-list/${resume.id}`, {
+  //       headers: { Authorization: token },
+  //     });
+      
+  //     const resumeData = response.data.data;
+  //     if (!resumeData || !resumeData.file_path || !resumeData.ai_resume_parse_data) {
+  //       console.error("Resume data not found in API response");
+  //       return;
+  //     }
+  
+  //     // Parse the ai_resume_parse_data
+  //     const parsedData = JSON.parse(resumeData.ai_resume_parse_data);
+  //     console.log(parsedData.templateData,"maia data hu");
+  //     // Set the resume data using the context
+  //     setResumeData(parsedData.templateData); // Use the appropriate structure from the parsed data
+  //     localStorage.setItem('resumeData', JSON.stringify(parsedData.templateData));
+  //     localStorage.setItem('resumeId', resumeData.id);
+  //     localStorage.setItem('location', resumeData.file_path);
+  
+  //     console.log("Resume data retrieved successfully");
+  
+  //     // Redirect to the builder page with the resume ID
+  //     router.push(`/dashboard/aibuilder/${resumeData.id}`);
+  //   } catch (error) {
+  //     console.error("Error fetching resume details:", error);
+  //   }
+  // };
+  const handleEditResume = async (resume) => {
+    console.log(resume.id, "id");
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      console.error("Token is missing");
+      return;
+    }
+
     try {
       // Fetch the resume details from the API
       const response = await axios.get(`https://api.resumeintellect.com/api/user/resume-list/${resume.id}`, {
         headers: { Authorization: token },
       });
-      
+
+      console.log("API response:", response.data);
+
       const resumeData = response.data.data;
       if (!resumeData || !resumeData.file_path || !resumeData.ai_resume_parse_data) {
         console.error("Resume data not found in API response");
         return;
       }
-  
+
       // Parse the ai_resume_parse_data
       const parsedData = JSON.parse(resumeData.ai_resume_parse_data);
-      console.log(parsedData.templateData,"maia data hu");
+      console.log(parsedData.templateData, "maia data hu");
+
       // Set the resume data using the context
       setResumeData(parsedData.templateData); // Use the appropriate structure from the parsed data
       localStorage.setItem('resumeData', JSON.stringify(parsedData.templateData));
       localStorage.setItem('resumeId', resumeData.id);
       localStorage.setItem('location', resumeData.file_path);
-  
+
       console.log("Resume data retrieved successfully");
-  
-      // Redirect to the builder page with the resume ID
-      router.push(`/dashboard/aibuilder/${resumeData.id}`);
+
+      // Check resumeData.id before navigation
+      if (resumeData.id) {
+        // Redirect to the builder page with the resume ID
+        router.push(`/dashboard/aibuilder/${resumeData.id}`);
+      } else {
+        console.error("Invalid resume ID for navigation");
+      }
     } catch (error) {
       console.error("Error fetching resume details:", error);
     }
-  };
-  
+};
+
   
   return (
     <div className="container mx-auto p-4 text-center h-3/4">
