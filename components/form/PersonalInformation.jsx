@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ResumeContext } from "../../pages/builder";
+import Image from "next/image";
 
 const PersonalInformation = () => {
   const { resumeData, setResumeData, handleProfilePicture, handleChange } =
@@ -14,7 +15,7 @@ const PersonalInformation = () => {
       <div className="flex flex-col  items-center gap-6 w-full max-w-md">
         
         <div className="flex flex-col items-center gap-4">
-          <img
+          <Image
             src={resumeData.profilePicture || dummyImage}
             alt="Profile"
             className="w-28 h-28 md:w-32 md:h-32 rounded-lg object-cover"
