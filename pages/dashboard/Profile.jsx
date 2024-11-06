@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import Navbar from "../Navbar/Navbar";
+import Image from "next/image";
 
 const ProfilePage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -256,7 +257,7 @@ const ProfilePage = () => {
               {/* Profile Information Section */}
               <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-4 flex-1">
                 <div className="w-10 h-10 sm:w-32 sm:h-32 flex-shrink-0">
-                  <img
+                  <Image
                     src={
                       formData.photo
                         ? `https://api.resumeintellect.com/${formData.photo}`

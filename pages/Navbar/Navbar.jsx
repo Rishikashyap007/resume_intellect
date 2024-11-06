@@ -87,7 +87,7 @@ const Navbar = () => {
                   onClick={toggleDropdown}
                   className="flex items-center bg-white text-white px-4 py-2 text-md font-semibold border-2 rounded-xl"
                 >
-                  <img 
+                  <Image 
                     src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg" 
                     alt="User" 
                     className="w-8 h-8 rounded-full "
