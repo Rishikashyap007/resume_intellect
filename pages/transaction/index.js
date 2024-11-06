@@ -55,12 +55,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+              <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
             </div>
           </div>
         </div>
         <div>
-          <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+          <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
         </div>
       </div>
 
@@ -93,12 +93,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+              <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
             </div>
           </div>
         </div>
         <div>
-          <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+          <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
         </div>
       </div>
 
