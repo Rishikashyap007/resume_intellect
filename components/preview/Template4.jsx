@@ -41,9 +41,12 @@ const Template4 = () => {
      <div className="max-w-4xl mx-auto bg-white p-8 border border-gray-200 rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold text-blue-500 mb-3" style={{ color: headerColor }}>{resumeData.name}</h1>
       <h2 className="text-xl text-gray-800 mb-5">{resumeData.position}</h2>
-      <p className="mb-5 text-xs">{resumeData.summary}</p>
+      <p className="mb-5 text-xs hover:scale-100 hover:text-gray-500 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+      contentEditable="true"
+      suppressContentEditableWarning={true}
+      >{resumeData.summary}</p>
 
-      <h3 className="text-lg font-semibold text-gray-800 mt-7 mb-4 border-b-2 text-[#818cf8] pb-1" style={{ color: headerColor }}>Work Experience</h3>
+      <h3 className="text-lg font-semibold text-gray-800 mt-7 mb-4 border-b-2 pb-1" style={{ color: headerColor }}>Work Experience</h3>
       {resumeData.workExperience.map((item, index) => (
         <div key={index} className="mb-7">
           <h4 className="text-lg font-semibold text-gray-800 mb-2">
@@ -58,7 +61,10 @@ const Template4 = () => {
             />
           </span>
 
-          <p className="content hyphens-auto">{item.description}</p>
+          <p className="content hyphens-auto hover:text-gray-500"
+           contentEditable="true"
+           suppressContentEditableWarning={true}
+          >{item.description}</p>
 
           <Droppable
             droppableId={`WORK_EXPERIENCE_KEY_ACHIEVEMENT-${index}`}

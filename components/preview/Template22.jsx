@@ -42,7 +42,9 @@ const Template22 = () => {
           <div class=""> 
             <div class="flex mb-5">
                 <div class="ml-5 p-5">
-                  <img src="img/profile_one.png"></img>
+                <img 
+                className="rounded-full"
+                src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
                 </div>
                 <div class="p-5">
                     <h1 className="text-4xl font-bold mb-2 text-blue-900" style={{ color: headerColor }}>{resumeData.name}</h1>
@@ -71,7 +73,10 @@ const Template22 = () => {
                   
               </div>
               <div class="border-solid border-b-2 border-blue-900 mb-2 mt-2"></div>
-              <p class="text-sm text-black	 tracking-wide	">
+              <p 
+              contentEditable="true"
+              suppressContentEditableWarning={true}
+              class="text-sm text-black	 tracking-wide	hover:outline-dashed hover:outline-2 hover:outline-gray-400">
               {resumeData.summary}
               </p>
             </div>
@@ -109,7 +114,10 @@ const Template22 = () => {
                                             />
                                           </div>
                                           <p className="content text-black">{item.position}</p>
-                                          <p className="content hyphens-auto text-black">
+                                          <p 
+                                          contentEditable="true"
+                                          suppressContentEditableWarning={true}
+                                          className="content hyphens-auto text-black hover:outline-dashed hover:outline-2 hover:outline-gray-400">
                                             {item.description}
                                           </p>
                                           <Droppable

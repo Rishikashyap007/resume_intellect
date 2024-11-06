@@ -42,9 +42,11 @@ const Template9 = () => {
     <div className="max-w-4xl mx-auto bg-white p-5 shadow-lg">
       <div className="mb-5">
         <h1 className="text-4xl font-bold text-left" style={{ color: headerColor }}>{resumeData.name}</h1>
-        <p className="text-sm text-gray-600">{resumeData.summary}</p>
+        <p className="text-sm text-gray-600 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+        contentEditable="true"
+        suppressContentEditableWarning={true}>{resumeData.summary}</p>
       </div>
-      <div className="text-right mb-5 text-sm text-gray-600">
+      <div className="text-left mb-5 text-sm text-gray-600">
         <p>
           <ContactInfo
             mainclass="gap-1 mb-1 contact"
@@ -59,7 +61,7 @@ const Template9 = () => {
         </p>
       </div>
       <div className="flex justify-between">
-        <div className="w-3/5">
+        <div className="w-3/5 pr-2">
           <section className="mb-5">
             <h2 className="text-lg font-bold border-b border-gray-300 pb-1 mb-3" style={{ color: headerColor }}>Experience</h2>
             <div className="mb-3">
@@ -99,7 +101,8 @@ const Template9 = () => {
                                   />
                                 </div>
                                 <p className="content">{item.position}</p>
-                                <p className="content hyphens-auto p-2">
+                                <p className="content hyphens-auto p-2 hover:outline-dashed hover:outline-2 hover:outline-gray-400" contentEditable="true"
+                      suppressContentEditableWarning={true}>
                                   {item.description}
                                 </p>
                                 <Droppable

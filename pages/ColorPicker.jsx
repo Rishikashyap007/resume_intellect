@@ -25,7 +25,7 @@ const ColorPicker = ({ selectedColor, onChange }) => {
   };
 
   return (
-    <div className="relative flex items-center m-2 z-50">
+    <div className="relative flex items-center m-2 z-10">
       <button
         onClick={handleToggleDropdown}
       className="rounded-lg border-2 border-blue-800 px-8 p-1 font-bold  bg-white text-blue-800"

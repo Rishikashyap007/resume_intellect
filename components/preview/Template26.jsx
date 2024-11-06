@@ -58,7 +58,10 @@ const Template26 = () => {
           </div>
           <div className="mb-5">
               <h2 className="text-xl font-bold mb-4 text-blue-600 border-y-2 border-blue-600 p-2" style={{ color: headerColor }}>ABOUT ME</h2>
-              <p class="text-black font-light">
+              <p class="text-black font-light hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+               contentEditable="true"
+               suppressContentEditableWarning={true}
+              >
                 {resumeData.summary}
               </p>
           </div>
@@ -125,7 +128,8 @@ const Template26 = () => {
                                       />
                                     </div>
                                     <p className="content">{item.position}</p>
-                                    <p className="content hyphens-auto">
+                                    <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"  contentEditable="true"
+  suppressContentEditableWarning={true}>
                                       {item.description}
                                     </p>
                                     <Droppable

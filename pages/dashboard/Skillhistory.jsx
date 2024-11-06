@@ -32,6 +32,7 @@ function Skillhistory() {
               <thead>
                 <tr className="bg-violet-900 text-white">
                   <th className="py-2 px-4">Date / Time</th>
+                  <th className="py-2 px-4">Skill Name</th>
                   <th className="py-2 px-4">Verification Status</th>
                   <th className="py-2 px-4">Total Questions</th>
                   <th className="py-2 px-4">Right Answers</th>
@@ -43,6 +44,7 @@ function Skillhistory() {
                 {users.map((user, index) => (
                   <tr key={index} className="border border-gray-700 text-center">
                     <td className="py-2 px-4">{user.date_time || "N/A"}</td>
+                    <td className="py-2 px-4">{user.skill_name || "N/A"}</td>
                     <td className="py-2 px-4">{user.is_verified ? "Verified" : "Not Verified"}</td>
                     <td className="py-2 px-4">{user.results.total_question}</td>
                     <td className="py-2 px-4">{user.results.right_answer}</td>

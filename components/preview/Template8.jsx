@@ -67,8 +67,11 @@ const Template8 = () => {
         />
       </div>
       <div className="mb-10">
-        <h3 className="text-lg font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3" style={{ color: headerColor }}>COMMUNICATION</h3>
-        <p>{resumeData.summary}</p>
+        <h3 className="text-lg font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3" style={{ color: headerColor }}>Summary</h3>
+        <p className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+         contentEditable="true"
+         suppressContentEditableWarning={true}
+        >{resumeData.summary}</p>
       </div>
       <div>
         <h3 className="text-lg font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3" style={{ color: headerColor }}>LEADERSHIP</h3>
@@ -159,7 +162,10 @@ const Template8 = () => {
                             />
                           </div>
                           <p className="content">{item.position}</p>
-                          <p className="content hyphens-auto">
+                          
+                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                          contentEditable="true"
+                          suppressContentEditableWarning={true}>
                             {item.description}
                           </p>
                           <Droppable

@@ -121,25 +121,9 @@ function Payment() {
             </tr>
           </thead>
 
-          <tbody>
-                        {/* <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Create optimized resumes</p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Create optimized resumes</p>
-                            </td> 
-                            
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Create optimized resumes</p>
-                            </td>
+        <tbody>
 
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Create optimized resumes</p>
-                            </td>
-                            
-                        </tr> */}
-                        <tr className='text-center'>
+        <tr className='text-center '>
   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
     <div className="flex items-center justify-center">
       <span className="text-green-500 mr-2">✔️</span>
@@ -158,92 +142,114 @@ function Payment() {
       <p className="text-gray-600">Create optimized resumes</p>
     </div>
   </td>
-  </tr>
-                        <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Copy and paste content from site</p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Copy and paste content from site</p>
-                            </td> */}
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Receive resume in pdf and docs</p>
-                            </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-600">✔️ Receive resume in pdf and docs</p>
-                            </td>
-                        </tr>
-                        <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Unlimited resumes edits</p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Unlimited resumes edits</p>
-                            </td> */}
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Cover letter included</p>
-                            </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-600">✔️ Cover letter included</p>
-                            </td>
-                          
-                        </tr>
+</tr>
 
+<tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Copy and paste content from site</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Receive resume in pdf and docs</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Receive resume in pdf and docs</p>
+    </div>
+  </td>
+</tr>
 
-                        <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Save resume as pdf and docs </p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Save resume as pdf and docs</p>
-                            </td> */}
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ 3 revisions included</p>
-                            </td>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-600">✔️ 3 revisions included</p>
-                            </td>
-                            
-                           
-                            
-                        </tr>
-                        <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600"> ✔️ Download fully formatted Resume </p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Download fully formatted Resume</p>
-                            </td> */}
-                            
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Speak one on one with writer</p>
-                            </td>
+<tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Unlimited resume edits</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Cover letter included</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Cover letter included</p>
+    </div>
+  </td>
+</tr>
 
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-600">✔️ Speak one on one with writer</p>
-                            </td>
-                            
-                        </tr>
-                        <tr className='text-center'>
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✖️ </p>
-                            </td>
-                            {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✖️ </p>
-                            </td>
-                             */}
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Final Delivery 1 week</p>
-                            </td>
+<tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Save resume as pdf and docs</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">3 revisions included</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">3 revisions included</p>
+    </div>
+  </td>
+</tr>
 
-                             
-                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p className="text-gray-600">✔️ Final Delivery 1 week</p>
-                            </td>
-                            
-                        </tr>
-                      
-                    </tbody>        
+<tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Download fully formatted Resume</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Speak one on one with writer</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Speak one on one with writer</p>
+    </div>
+  </td>
+</tr>
+
+<tr className='text-center'>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-red-500 mr-2">✖️</span>
+      <p className="text-gray-600"></p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Final Delivery 1 week</p>
+    </div>
+  </td>
+  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+    <div className="flex items-center justify-center">
+      <span className="text-green-500 mr-2">✔️</span>
+      <p className="text-gray-600">Final Delivery 1 week</p>
+    </div>
+  </td>
+</tr>
+
+          </tbody>       
         </table>
       </div>
     </div>

@@ -70,7 +70,9 @@ const Template14 = () => {
   
           <div className="mb-6">
             <h3 className="text-xl font-semibold border-b-2 border-gray-800 pb-2 mb-4" style={{ color: headerColor }}>Profile</h3>
-            <p>
+            <p className="hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+            contentEditable="true"
+                      suppressContentEditableWarning={true}>
             {resumeData.summary}
             </p>
           </div>
@@ -160,7 +162,10 @@ const Template14 = () => {
                                     />
                                   </div>
                                   <p className="content">{item.position}</p>
-                                  <p className="content hyphens-auto">
+                                  <p 
+                                   contentEditable="true"
+                                   suppressContentEditableWarning={true}
+                                  className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400">
                                     {item.description}
                                   </p>
                                   <Droppable

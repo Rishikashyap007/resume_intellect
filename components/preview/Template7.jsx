@@ -41,11 +41,13 @@ const Template7 = () => {
 
 
     <section className="flex justify-between">
-      <div className="w-8/12">
+      <div className="w-8/12 pr-2">
         <header className=" border-b-2 border-gray-200 pb-5 mb-5">
           <h1 className="text-4xl text-blue-700" style={{ color: headerColor }}>{resumeData.name}</h1>
           <h2 className="text-2xl text-gray-800 mb-2">{resumeData.position}</h2>
-          <p className="text-base text-gray-600">
+          <p className="text-base text-gray-600 hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+          contentEditable="true"
+          suppressContentEditableWarning={true}>
             {resumeData.summary}
           </p>
         </header>
@@ -81,7 +83,9 @@ const Template7 = () => {
                             />
                           </div>
                           <p className="content">{item.position}</p>
-                          <p className="content hyphens-auto">
+                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                          contentEditable="true"
+                      suppressContentEditableWarning={true}>
                             {item.description}
                           </p>
                           <Droppable

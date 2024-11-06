@@ -184,7 +184,10 @@ const Template1 = () => {
               <h2 className="section-title mb-1 border-b-2 border-gray-300" style={{ color: headerColor }}>
                 Summary
               </h2>
-              <p className="content break-words border-l-4 border-l-gray-800 p-2" style={{ background: "#eee" }}>{resumeData.summary}</p>
+              <p className="content break-words border-l-4 border-l-gray-800 p-2 hover:scale-105 transition-transform duration-300 mb-1 bg-stone-200 my-2 " style={{ background: "#eee" }}
+              contentEditable="true"
+              suppressContentEditableWarning={true}
+              >{resumeData.summary}</p>
             </div>
           )}
           <div>
@@ -252,7 +255,7 @@ const Template1 = () => {
           {resumeData.certifications.length > 0 &&
             <div>
               <h2 className="section-title mb-1 border-b-2 border-gray-300" style={{ color: headerColor }}>Certifications</h2>
-              <ul className="sub-content border-l-4 border-l-gray-800 p-2 bg-stone-200 my-2 my-2">
+              <ul className="sub-content border-l-4 border-l-gray-800 p-2 bg-stone-200 my-2 ">
                 {resumeData.certifications.map((certification, index) => (
                   <li key={index}>{certification}</li>
                 ))}
@@ -296,7 +299,9 @@ const Template1 = () => {
                             />
                           </div>
                           <p className="content">{item.position}</p>
-                          <p className="content hyphens-auto">
+                          <p className="content hyphens-auto hover:outline-dashed hover:outline-2 hover:outline-gray-400"
+                          contentEditable="true"
+                          suppressContentEditableWarning={true}>
                             {item.description}
                           </p>
                           <Droppable
