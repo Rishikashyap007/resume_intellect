@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router"; // Import useRouter from next/router
-import Image from "next/image";
+// import img from "next/img";
 
 const Index = () => {
   const [verificationResult, setVerificationResult] = useState(null);
@@ -56,12 +56,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <Image src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
+              <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
             </div>
           </div>
         </div>
         <div>
-          <Image src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
+          <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
         </div>
       </div>
 
@@ -94,12 +94,12 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <Image src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
+              <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="img1"/>
             </div>
           </div>
         </div>
         <div>
-          <Image src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
+          <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="img1" />
         </div>
       </div>
 

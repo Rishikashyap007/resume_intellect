@@ -45,7 +45,7 @@ const Template21 = () => {
           
             <div class="bg-cyan-500 p-5 w-1/3">
                 <div class="rounded-full border-solid	border-white-500 mb-5">
-                <Image className="rounded-full" src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
+                <img className="rounded-full" src={resumeData.profilePicture ? resumeData.profilePicture : "img/profile_one.png"} alt="Profile" />
                 <div class="border-solid rounded border-b-2 border-white-800 mb-2 mt-2"></div>
                 </div>
                 <div className="mb-8">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import toast from "react-toastify";
 
 function Changepassword() {
   const [showOldPassword, setShowOldPassword] = useState(false);
@@ -29,7 +28,6 @@ function Changepassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!token) {
-      toast("❌ No token found. Please log in.");
       return;
     }
 
